@@ -63,9 +63,32 @@
     color: #2c3e50;
     font-weight: bold;
   }
+        /* Dark Mode Colors */
+  .dark-theme {
+    background-color: #2c3e50 !important;
+    color: #ecf0f1 !important;
+  }
+
+  .dark-theme h1, .dark-theme p, .dark-theme h3 {
+    color: #ecf0f1 !important;
+  }
+
+  /* Button Style */
+  #dark-mode-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: #2c3e50;
+    color: white;
+  }
 </style>
 </head>
 <body>
+    <button onclick="toggleDarkMode()" id="dark-mode-btn">🌙 Dark Mode</button>
 <img src="https://github.com/kasmurthyv-star.png" alt="Varshitha's Profile Picture">
     <h1>Hello World! 👋</h1>
     <p>My name is Varshitha and I am building my first website on GitHub.</p>
@@ -77,6 +100,18 @@
     <li>Learning JavaScript</li>
 </ul>
     <a href="https://www.linkedin.com/in/kasumurthy-varshitha-937320214">Connect with me on LinkedIn</a>
-
+<script>
+  function toggleDarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-theme");
+    
+    var btn = document.getElementById("dark-mode-btn");
+    if (element.classList.contains("dark-theme")) {
+      btn.innerHTML = "☀️ Light Mode";
+    } else {
+      btn.innerHTML = "🌙 Dark Mode";
+    }
+  }
+</script>
 </body>
 </html>
